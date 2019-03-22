@@ -4,6 +4,9 @@ flights = [
     { origin: "SEA", destination: "SFX", depart: 1, arrive: 3 },
     { origin: "SEA", destination: "LAX", depart: 1, arrive: 4 },
     { origin: "PDX", destination: "DAL", depart: 1, arrive: 4 },
+    { origin: "LAX", destination: "SEA", depart: 15, arrive: 19 },
+    { origin: "SEA", destination: "DAL", depart: 19, arrive: 24 },
+    { origin: "PDX", destination: "DAL", depart: 16, arrive: 20 },
     { origin: "SFX", destination: "DAL", depart: 7, arrive: 12 },
     { origin: "LAX", destination: "SFX", depart: 12, arrive: 14 },
     { origin: "LAX", destination: "DAL", depart: 4, arrive: 7 }
@@ -15,7 +18,7 @@ $(document).ready(function() {
         foundRoutes.forEach((route) =>{
             $("#results").append("<li>");
             route.forEach((flight) => {
-                $("#results").append(flight.origin + " -> "+ flight.destination);
+                $("#results").append(flight.origin + " -> "+ flight.destination + " departing at " + flight.depart + ". ");
             })
             $("#results").append("</li>");
         })
