@@ -40,8 +40,9 @@ function getRoutes(origin, destination, route = [], time = 0) {
         getFlights(origin, time).forEach((flight) => {
             var newRoute = route.slice(0);
             newRoute.push(flight);
-            if (getRoutes(flight.destination, destination, newRoute, flight.arrive).length > 0) {
-                validRoutes.push(getRoutes(flight.destination, destination, newRoute, flight.arrive)[0]);
+            var nextRoutes = getRoutes(flight.destination, destination, newRoute, flight.arrive)
+            if (nextRoutes.length > 0) {
+                validRoutes.push(nextRoutes[0]);
             }
         })
     }
