@@ -32,9 +32,6 @@ function getFlights(origin, time) {
     return results;
 }
 
-console.log(getFlights("SFX", 3));
-
-
 function getRoutes(origin, destination, route = [], time = 0) {
     var validRoutes = [];
     if(route.length > 0 && route[route.length-1].destination == destination) {
