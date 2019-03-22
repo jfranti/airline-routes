@@ -1,4 +1,4 @@
-flights = [
+var flights = [
     { origin: "SEA", destination: "DAL", depart: 1, arrive: 5 },
     { origin: "SEA", destination: "PDX", depart: 1, arrive: 2 },
     { origin: "SEA", destination: "SFX", depart: 1, arrive: 3 },
