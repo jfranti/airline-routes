@@ -53,7 +53,7 @@ function getRoutes(origin, destination, route = [], time = 0) {
         getFlights(origin, time).forEach((flight) => {
             var newRoute = route.slice(0);
             newRoute.push(flight);
-            var nextRoutes = getRoutes(flight.destination, destination, newRoute, flight.arrive)
+            var nextRoutes = getRoutes(flight.destination, destination, newRoute, flight.arrive);
             for(var i = 0;i<nextRoutes.length;i++) {
                 validRoutes.push(nextRoutes[i]);
             }
