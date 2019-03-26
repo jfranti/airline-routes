@@ -1,5 +1,8 @@
 var flights = [
     { origin: "SEA", destination: "DAL", depart: 1, arrive: 5 },
+    { origin: "SEA", destination: "GBW", depart: 1, arrive: 5 },
+    { origin: "GBW", destination: "DAL", depart: 7, arrive: 12 },
+    { origin: "GBW", destination: "DAL", depart: 8, arrive: 13 },
     { origin: "SEA", destination: "PDX", depart: 1, arrive: 2 },
     { origin: "SEA", destination: "SFX", depart: 1, arrive: 3 },
     { origin: "SEA", destination: "LAX", depart: 1, arrive: 4 },
@@ -51,8 +54,8 @@ function getRoutes(origin, destination, route = [], time = 0) {
             var newRoute = route.slice(0);
             newRoute.push(flight);
             var nextRoutes = getRoutes(flight.destination, destination, newRoute, flight.arrive)
-            if (nextRoutes.length > 0) {
-                validRoutes.push(nextRoutes[0]);
+            for(var i = 0;i<nextRoutes.length;i++) {
+                validRoutes.push(nextRoutes[i]);
             }
         })
     }
